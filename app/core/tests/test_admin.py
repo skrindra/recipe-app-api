@@ -18,7 +18,7 @@ class AdminSiteTest(TestCase):
         self.client = Client()
         self.admin_user = get_user_model().objects.create_superuser(
             email='admin@example.com',
-            password= 'testpassword123',
+            password='testpassword123',
         )
         self.client.force_login(self.admin_user)
 
@@ -28,7 +28,6 @@ class AdminSiteTest(TestCase):
             password='testpass123',
             name='Test User'
         )
-
 
     def test_users_list(self):
         """Test the users are listed on the page."""
@@ -51,5 +50,3 @@ class AdminSiteTest(TestCase):
         res = self.client.get(url)
 
         self.assertEqual(res.status_code, 200)
-
-

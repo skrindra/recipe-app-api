@@ -25,7 +25,7 @@ class UserManager(BaseUserManager):
     def create_superuser(self, email, password):
         """create and return a new super user."""
         user = self.create_user(email, password)
-        user.is_staff= True
+        user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)
 
@@ -44,6 +44,3 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # replace the username defualt field to email field
     USERNAME_FIELD = 'email'
-
-
-
