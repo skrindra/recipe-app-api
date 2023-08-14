@@ -5,7 +5,7 @@ from drf_spectacular.utils import (
     extend_schenma_view,
     extend_schema,
     openApiParameter,
-    openApitypes,
+    openApitypes
 )
 
 from rest_framework import (
